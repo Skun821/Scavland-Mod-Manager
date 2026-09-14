@@ -15,7 +15,8 @@ $files = @(
     'BRIDGE_CHANGES.md',
     'COMPATIBILITY.md',
     'BUILD.md',
-    'RELEASE_CHECKLIST.md'
+    'RELEASE_CHECKLIST.md',
+    'RELEASE_NOTES_v0.1.0.md'
 )
 foreach ($file in $files) {
     if (-not (Test-Path -LiteralPath (Join-Path $root $file))) { throw "Required bootstrap file is missing: $file" }
