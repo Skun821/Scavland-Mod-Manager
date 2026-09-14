@@ -1,0 +1,23 @@
+# Generated release assets and downloaded build inputs
+/artifacts/
+/vendor-cache/
+
+# Local build output
+**/bin/
+**/obj/
+**/Output/
+**/.vs/
+**/.git/
+
+# User/game files must never enter this repository
+Scavland.exe
+Scavland_Data/
+BepInEx/
+MelonLoader/
+Mods/
+Plugins/
+UserData/
+UserLibs/
+LogOutput*.log
+winhttp.dll
+doorstop_config.ini

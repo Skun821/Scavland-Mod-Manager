@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "gameExecutable": "Scavland.exe",
+  "runtime": {
+    "version": "0.1.0-dev",
+    "url": "https://github.com/REPLACE_OWNER/Scavland-Mod-Manager/releases/download/runtime-0.1.0/Scavland-BepInEx-Runtime.zip",
+    "sha256": "EAFB142501BC766AC78951B9BA9910EEA42B15B324DADF13688B2476CF848A5B"
+  },
+  "melonLoader": {
+    "version": "0.7.3",
+    "url": "https://github.com/LavaGang/MelonLoader/releases/download/v0.7.3/MelonLoader.x64.zip",
+    "sha256": "5B2B2F3D1CD42B59EC886C5BDC2663EDAE87A0097A4F4A8F58C0965A99DDA416"
+  }
+}
