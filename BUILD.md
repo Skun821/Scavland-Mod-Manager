@@ -14,7 +14,7 @@ Build the user-facing bootstrap ZIP only after its manifest contains the final
 GitHub Release URL and SHA-256:
 
 ```powershell
-.\Build-ScavlandModManagerZip.ps1 -OutputZip '.\artifacts\ScavlandModManager-0.1.0.zip'
+.\Build-ScavlandModManagerZip.ps1 -OutputZip '.\artifacts\ScavlandModManager-0.1.2.zip'
 ```
 
 Build and publish the matching source archive with the runtime payload:
@@ -24,7 +24,7 @@ Build and publish the matching source archive with the runtime payload:
   -BepInExSource '<BepInEx source at 5b766a3...>' `
   -MelonLoaderSource '<modified MelonLoader source>' `
   -MelonHostSource '<ScavlandMelonHost source>' `
-  -OutputZip '.\artifacts\ScavlandModManager-Source-0.1.0.zip'
+  -OutputZip '.\artifacts\ScavlandModManager-Source-0.1.2.zip'
 ```
 
 Build the bridge projects first, then create the runtime payload:
@@ -34,13 +34,13 @@ dotnet build '<ScavlandMelonHost.csproj>' -c Release `
   -p:ScavlandGamePath='C:\Program Files (x86)\Steam\steamapps\common\Scavland'
 
 .\Build-ScavlandRuntimePayload.ps1 `
-  -BepInExRoot '<clean BepInEx runtime root>' `
+  -BepInExRoot '<Scavland quiet-logging patched BepInEx 6 runtime root>' `
   -BridgeDll '<ScavlandMelonHost.dll>' `
   -CustomMelonLoaderDll '<modified MelonLoader.dll>' `
   -BepInExLicense '<BepInEx LICENSE>' `
   -MelonLoaderLicense '<MelonLoader LICENSE.md>' `
   -MelonLoaderNotice '<MelonLoader NOTICE.txt>' `
-  -OutputZip '.\artifacts\Scavland-BepInEx-Runtime-0.1.0.zip'
+  -OutputZip '.\artifacts\Scavland-BepInEx-Runtime-0.1.2.zip'
 ```
 
 Calculate the SHA-256 of the completed archive and put it in

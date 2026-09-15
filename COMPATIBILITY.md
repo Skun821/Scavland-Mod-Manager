@@ -7,14 +7,17 @@
   runtime and dispatches basic Melon lifecycle callbacks.
 - The manager installs the official MelonLoader compatibility BCL files only
   after backing up the eleven files it replaces, and restores that backup.
+- A full-BCL, unmodified-BepInEx isolated game launch loaded a Melon MOD which
+  applied a real Harmony patch (`1 -> 2`) and a real MonoMod RuntimeDetour
+  (`3 -> 4`). This is the manager's baseline runtime composition.
 
 ## Not a universal compatibility promise
 
-The bridge can load a Melon DLL, but individual mods may also need APIs that
-Scavland's compact Unity Mono runtime does not provide. The known next blocker
-is Harmony/MonoMod code that calls unavailable reflection members such as
-`AssemblyName.ProcessorArchitecture`. A manager install cannot safely invent
-those runtime features.
+The bridge can load a Melon DLL, but it cannot guarantee arbitrary third-party
+MOD behavior. The full compatibility BCL specifically targets normal
+Harmony/MonoMod and missing managed-API dependencies. Native hooks,
+anti-loader checks, obsolete Melon APIs, external native DLLs and
+game-version-specific patches still need individual compatibility work.
 
 The bridge should grow through a tested compatibility matrix: reproduce one
 specific MOD failure, identify the missing API or loader behavior, make the

@@ -2,9 +2,12 @@
 
 Open-source bootstrap runtime for the Windows x64 Steam edition of Scavland.
 
-It installs a Scavland-tested BepInEx runtime, installs the Scavland Melon
-bridge, downloads the pinned official MelonLoader release, backs up the eleven
-core compatibility assemblies, and can restore those assemblies later.
+It installs a Scavland-tested BepInEx runtime, installs the
+Scavland Melon bridge, downloads the pinned official MelonLoader release,
+backs up the eleven core compatibility assemblies, and can restore those
+assemblies later. The full compatibility BCL is included specifically so that
+normal Harmony, MonoMod RuntimeDetour and missing managed-API dependencies can
+run under the hosted MelonLoader path.
 
 This repository never contains Scavland game binaries or third-party MOD DLLs.
 
@@ -12,8 +15,9 @@ This repository never contains Scavland game binaries or third-party MOD DLLs.
 
 `BepInEx/plugins` contains BepInEx MODs. `Mods` and `Plugins` contain Melon
 MODs/plugins. The manager reports what it installed, but does not promise that
-an arbitrary third-party MOD will work: native hooks, obsolete Melon APIs and
-MOD-specific loader checks need individual compatibility work.
+an arbitrary third-party MOD will work: native hooks, obsolete Melon APIs,
+external native DLLs and MOD-specific loader checks need individual
+compatibility work.
 
 After a failed launch, run the read-only diagnostic command:
 
@@ -48,7 +52,7 @@ archives. They are still checked against the manifest hashes:
 
 ```powershell
 .\Install-ScavlandModManager.ps1 -Action Install -GamePath '<test game folder>' `
-  -RuntimeArchive '.\Scavland-BepInEx-Runtime-0.1.0.zip' `
+  -RuntimeArchive '.\Scavland-BepInEx-Runtime-0.1.2.zip' `
   -MelonLoaderArchive '.\MelonLoader.x64.zip'
 ```
 

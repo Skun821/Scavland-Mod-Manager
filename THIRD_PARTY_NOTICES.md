@@ -3,8 +3,11 @@
 ## BepInEx
 
 The runtime payload contains BepInEx 6 Unity Mono runtime files, version
-`6.0.0-be.788` (commit `5b766a3b7f6c164d4798924a93f3acf4db769d06`), without
-source modifications by this project.
+`6.0.0-be.788` (commit `5b766a3b7f6c164d4798924a93f3acf4db769d06`) with a
+minimal Scavland quiet-logging patch. It suppresses only the two non-fatal
+messages emitted when Scavland's stripped Unity APIs prevent optional Unity-log
+forwarding. The complete modified source and change description are included
+with the matching source release.
 BepInEx is licensed under GNU LGPL v2.1 or later.
 
 - Source: https://github.com/BepInEx/BepInEx

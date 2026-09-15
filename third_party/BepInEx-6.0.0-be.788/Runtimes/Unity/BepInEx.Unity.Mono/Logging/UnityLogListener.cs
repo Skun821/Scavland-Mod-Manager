@@ -45,8 +45,10 @@ namespace BepInEx.Unity.Mono.Logging
                 break;
             }
 
-            if (WriteStringToUnityLog == null)
-                Logger.Log(LogLevel.Error, "Unable to start Unity log writer");
+            // Scavland's managed Unity build does not expose either internal log-writer
+            // entry point.  Unity-output mirroring is optional: leave it disabled without
+            // reporting a startup error, while preserving all normal BepInEx file/console
+            // logging and all MOD errors.
         }
 
         /// <inheritdoc />

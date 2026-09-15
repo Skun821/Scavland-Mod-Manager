@@ -19,7 +19,7 @@ function Copy-SourceTree([string] $Source, [string] $Destination) {
 
 function Copy-ManagerSource([string] $Source, [string] $Destination) {
     New-Item -ItemType Directory -Path $Destination -Force | Out-Null
-    & robocopy $Source $Destination /E /XD .git bin obj Output artifacts vendor-cache .vs bridge third_party /NFL /NDL /NJH /NJS /NP | Out-Null
+    & robocopy $Source $Destination /E /XD .git bin obj Output artifacts vendor-cache toolchain test-evidence .vs bridge third_party /NFL /NDL /NJH /NJS /NP | Out-Null
     if ($LASTEXITCODE -gt 7) { throw "robocopy failed while staging manager source: $Source (exit $LASTEXITCODE)" }
 }
 
@@ -33,15 +33,16 @@ try {
     @'
 # Source release map
 
-This archive accompanies Scavland Mod Manager runtime release 0.1.0.
+This archive accompanies Scavland Mod Manager runtime release 0.1.2.
 
 - `ScavlandModManager`: installer, manifest, packaging scripts and notices.
 - `ScavlandMelonHost`: BepInEx bridge-plugin source.
 - `MelonLoader-ScavlandCompat`: MelonLoader 0.7.3 source with the changes
   described in `ScavlandModManager/BRIDGE_CHANGES.md`.
-- `BepInEx-6.0.0-be.788`: unmodified BepInEx source at commit
-  `5b766a3b7f6c164d4798924a93f3acf4db769d06` used to produce the packaged
-  BepInEx runtime.
+- `BepInEx-6.0.0-be.788`: BepInEx source at commit
+  `5b766a3b7f6c164d4798924a93f3acf4db769d06`, including the Scavland
+  quiet-logging patch documented in `ScavlandModManager/BRIDGE_CHANGES.md`,
+  used to produce the packaged BepInEx runtime.
 
 No Scavland game file, game assembly, user save, user configuration or
 third-party MOD is in this source archive.

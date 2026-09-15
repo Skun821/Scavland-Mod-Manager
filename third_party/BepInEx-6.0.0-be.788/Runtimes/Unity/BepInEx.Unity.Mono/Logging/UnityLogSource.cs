@@ -71,11 +71,9 @@ public class UnityLogSource : ILogSource
             // taking the whole loader down with us.
             if (registerLogCallback == null)
             {
-                Logger.Log(LogLevel.Warning,
-                           "Unity log forwarding is unavailable: neither " +
-                           "Application.logMessageReceived nor Application.RegisterLogCallback exist " +
-                           "in this build (they were most likely stripped). Unity log messages will " +
-                           "not appear in the BepInEx log.");
+                // Scavland strips both Unity callback APIs.  Unity log forwarding is
+                // optional, so retain normal BepInEx and MOD logging without emitting a
+                // non-actionable startup warning on every launch.
                 return;
             }
 

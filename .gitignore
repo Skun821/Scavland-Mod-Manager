@@ -1,6 +1,8 @@
 # Generated release assets and downloaded build inputs
 /artifacts/
 /vendor-cache/
+/toolchain/
+/test-evidence/
 
 # Local build output
 **/bin/

@@ -43,7 +43,10 @@ try {
     Copy-Item -LiteralPath $MelonLoaderNotice -Destination (Join-Path $licenseDirectory 'MelonLoader-NOTICE.txt') -Force
     @'
 Payload composition:
-- BepInEx 6.0.0-be.788 (commit 5b766a3b7f6c164d4798924a93f3acf4db769d06), unmodified.
+- BepInEx 6.0.0-be.788 (commit 5b766a3b7f6c164d4798924a93f3acf4db769d06),
+  with the Scavland quiet-logging patch only. It suppresses two known non-fatal
+  Unity-log-forwarding messages caused by stripped Unity APIs; normal BepInEx
+  file/console logging and MOD error logging remain enabled.
 - ScavlandMelonHost.dll, this project's BepInEx bridge plugin.
 - Modified MelonLoader.dll based on MelonLoader 0.7.3 (commit 982ed99).
 
