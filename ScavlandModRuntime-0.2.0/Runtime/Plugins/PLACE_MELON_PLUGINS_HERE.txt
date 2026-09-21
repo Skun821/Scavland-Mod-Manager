@@ -1,0 +1,1 @@
+Place compatible MelonLoader plugin DLL files in this folder when a mod requires them.

@@ -1,0 +1,2 @@
+Place compatible MelonLoader MOD DLL files in this folder.
+The Scavland Melon compatibility host loads this folder at game startup.

@@ -1,63 +1,62 @@
-# Scavland Mod Manager
+# Scavland Mod Runtime
 
-Open-source bootstrap runtime for the Windows x64 Steam edition of Scavland.
+This repository publishes the `ScavlandModRuntime-0.2.0` installer for the
+Windows x64 Steam edition of Scavland.
 
-It installs a Scavland-tested BepInEx runtime, installs the
-Scavland Melon bridge, downloads the pinned official MelonLoader release,
-backs up the eleven core compatibility assemblies, and can restore those
-assemblies later. The full compatibility BCL is included specifically so that
-normal Harmony, MonoMod RuntimeDetour and missing managed-API dependencies can
-run under the hosted MelonLoader path.
+The installer downloads the official BepInEx Unity Mono runtime and the
+official MelonLoader 0.7.3 archive, verifies both downloads, and then applies
+the Scavland compatibility files. It does not include the BepInEx source tree,
+the MelonLoader source tree, Scavland game files, `Assembly-CSharp.dll`, or
+user MODs.
 
-This repository never contains Scavland game binaries or third-party MOD DLLs.
+## Installation
 
-## Compatibility contract
+1. Open the `ScavlandModRuntime-0.2.0` folder.
+2. Run `Install-Scavland-Mod-Runtime.cmd`.
+3. Extract the package anywhere. The installer detects the Scavland folder
+   automatically when the package is next to the game folder or inside it.
+4. If automatic detection is not possible, enter the path containing
+   `Scavland.exe`.
+5. Start Scavland normally through Steam.
 
-`BepInEx/plugins` contains BepInEx MODs. `Mods` and `Plugins` contain Melon
-MODs/plugins. The manager reports what it installed, but does not promise that
-an arbitrary third-party MOD will work: native hooks, obsolete Melon APIs,
-external native DLLs and MOD-specific loader checks need individual
-compatibility work.
+The installer installs the official runtime first, then applies the Scavland
+compatibility layer. It does not install user MODs. Install BepInEx MODs into
+`Scavland/BepInEx/plugins/` and compatible MelonLoader MODs into
+`Scavland/Mods/` after the runtime installation.
 
-After a failed launch, run the read-only diagnostic command:
+## Console logs
 
-```powershell
-.\ScavlandModManager.cmd -Action Diagnose
+The packaged configuration enables the BepInEx console window:
+
+```ini
+[Logging.Console]
+Enabled = true
 ```
 
-See `COMPATIBILITY.md` for the tested scope and current bridge limitations.
+Runtime logs are also written to:
 
-## Development use
-
-Create a release manifest with immutable HTTPS URLs and SHA-256 hashes for:
-
-1. A Scavland runtime payload containing the tested BepInEx files and
-   `ScavlandMelonHost.dll`.
-2. The official `MelonLoader.x64.zip` release.
-
-Then run:
-
-```powershell
-Set-ExecutionPolicy -Scope Process Bypass
-.\Install-ScavlandModManager.ps1 -Action Install -GamePath 'C:\Program Files (x86)\Steam\steamapps\common\Scavland'
+```text
+Scavland/BepInEx/LogOutput.log
 ```
 
-The installer refuses URLs without a pinned SHA-256 hash. It creates a backup
-before replacing any core compatibility assembly. `-Action Restore` restores
-only those backed-up core assemblies; it deliberately leaves user MOD files
-alone.
+## Package contents
 
-For a release-build verification without network access, pass both local
-archives. They are still checked against the manifest hashes:
+The complete installer is in [`ScavlandModRuntime-0.2.0/`](ScavlandModRuntime-0.2.0/).
 
-```powershell
-.\Install-ScavlandModManager.ps1 -Action Install -GamePath '<test game folder>' `
-  -RuntimeArchive '.\Scavland-BepInEx-Runtime-0.1.2.zip' `
-  -MelonLoaderArchive '.\MelonLoader.x64.zip'
-```
+- `Install-Scavland-Mod-Runtime.cmd`: user-facing installer
+- `Install-Scavland-Mod-Runtime.ps1`: download, verification, and installation logic
+- `Runtime/ScavlandMelonLoader.dll`: Scavland compatibility build applied after the official download
+- `Runtime/BepInEx/plugins/ScavlandMelonHost.dll`: BepInEx bridge for compatible MelonLoader MODs
+- `README.md`, `LICENSE`, and `THIRD_PARTY_NOTICES.md`: installation and legal notices
 
-## Distribution
+Do not copy the DLLs into `Scavland_Data/Managed`. Do not install the native
+MelonLoader bootstrap (`version.dll` or `dobby.dll`) alongside this combined
+BepInEx setup.
 
-Publish the runtime payload and this bootstrap as GitHub Release assets. Include
-the complete corresponding source, build instructions and third-party notices
-for every BepInEx / MelonLoader derivative used in the payload.
+## License
+
+Original Scavland runtime components in this repository are released under
+the MIT License. See [LICENSE](LICENSE). BepInEx and MelonLoader remain
+separate upstream projects and are downloaded from their official sources by
+the installer; their notices are documented in the package's
+`THIRD_PARTY_NOTICES.md`.

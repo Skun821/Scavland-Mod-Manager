@@ -1,0 +1,1 @@
+Place MelonLoader dependency DLL files in this folder when their mod author instructs you to do so.
