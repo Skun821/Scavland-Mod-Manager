@@ -23,9 +23,12 @@ user MODs.
 5. Start Scavland normally through Steam.
 
 The installer installs the official runtime first, then applies the Scavland
-compatibility layer. Install BepInEx MODs into
-`Scavland/BepInEx/plugins/`. Install MelonLoader MODs into
-`Scavland/Mods/`.
+compatibility layer.
+
+## MOD installation locations
+
+- BepInEx MODs: `Scavland/BepInEx/plugins/`
+- MelonLoader MODs: `Scavland/Mods/`
 
 ## Console logs
 
