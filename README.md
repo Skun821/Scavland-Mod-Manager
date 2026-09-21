@@ -8,9 +8,8 @@ Windows x64 Steam edition of Scavland.
 The installer downloads the official BepInEx Unity Mono runtime and the
 official MelonLoader 0.7.3 archive, verifies both downloads, and then applies
 the Scavland compatibility files so BepInEx and compatible MelonLoader MODs
-can run together. It does not include the BepInEx source tree,
-the MelonLoader source tree, Scavland game files, `Assembly-CSharp.dll`, or
-user MODs.
+can run together. This package provides the combined runtime and the
+Scavland compatibility bridge required for that setup.
 
 ## Installation
 
