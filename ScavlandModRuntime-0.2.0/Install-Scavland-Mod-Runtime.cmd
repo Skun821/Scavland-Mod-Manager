@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableExtensions DisableDelayedExpansion
-title Scavland Mod Runtime 0.2.0 Installer
+title Scavland BepInEx + MelonLoader Bridge 0.2.0 Installer
 
 set "PACKAGE_DIR=%~dp0"
 set "INSTALLER=%PACKAGE_DIR%Install-Scavland-Mod-Runtime.ps1"

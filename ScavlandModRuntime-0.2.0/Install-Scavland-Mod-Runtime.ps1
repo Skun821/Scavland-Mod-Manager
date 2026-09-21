@@ -54,7 +54,7 @@ $melonLoaderDirectory = Join-Path $gameDirectory 'MelonLoader'
 $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $workDirectory = Join-Path ([System.IO.Path]::GetTempPath()) ('ScavlandModRuntime-' + [Guid]::NewGuid().ToString('N'))
 
-Write-Host 'Scavland Mod Runtime 0.2.0' -ForegroundColor Cyan
+Write-Host 'Scavland BepInEx + MelonLoader Bridge 0.2.0' -ForegroundColor Cyan
 Write-Host "Target: $gameDirectory"
 Write-Host 'Official downloads are verified before the Scavland compatibility layer is applied.' -ForegroundColor Green
 

@@ -1,11 +1,14 @@
-# Scavland Mod Runtime
+# Scavland BepInEx + MelonLoader Bridge
 
 This repository publishes the `ScavlandModRuntime-0.2.0` installer for the
 Windows x64 Steam edition of Scavland.
 
+**Display name:** Scavland BepInEx + MelonLoader Bridge
+
 The installer downloads the official BepInEx Unity Mono runtime and the
 official MelonLoader 0.7.3 archive, verifies both downloads, and then applies
-the Scavland compatibility files. It does not include the BepInEx source tree,
+the Scavland compatibility files so BepInEx and compatible MelonLoader MODs
+can run together. It does not include the BepInEx source tree,
 the MelonLoader source tree, Scavland game files, `Assembly-CSharp.dll`, or
 user MODs.
 

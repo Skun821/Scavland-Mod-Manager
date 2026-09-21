@@ -1,6 +1,6 @@
-# Scavland Mod Runtime 0.2.0
+# Scavland BepInEx + MelonLoader Bridge 0.2.0
 
-Scavland Mod Runtime downloads the official BepInEx 6 Unity Mono package and the official MelonLoader 0.7.3 package, verifies both archives, and then applies the Scavland compatibility layer for the current Steam build of Scavland. It does **not** replace or edit anything in `Scavland_Data\Managed`.
+Scavland BepInEx + MelonLoader Bridge downloads the official BepInEx 6 Unity Mono package and the official MelonLoader 0.7.3 package, verifies both archives, and then applies the Scavland compatibility layer so BepInEx and compatible MelonLoader MODs can run together. It does **not** replace or edit anything in `Scavland_Data\Managed`.
 
 Tested with Scavland Steam build `25339586` (2026-09-16).
 
