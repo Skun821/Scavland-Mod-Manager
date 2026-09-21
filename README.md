@@ -14,18 +14,18 @@ user MODs.
 
 ## Installation
 
-1. Open the `ScavlandModRuntime-0.2.0` folder.
-2. Run `Install-Scavland-Mod-Runtime.cmd`.
-3. Extract the package anywhere. The installer detects the Scavland folder
-   automatically when the package is next to the game folder or inside it.
-4. If automatic detection is not possible, enter the path containing
-   `Scavland.exe`.
+1. Open the Scavland game folder, the folder containing `Scavland.exe`.
+2. Extract the `ScavlandModRuntime-0.2.0` package inside the game folder.
+3. Open the extracted package folder and run
+   `Install-Scavland-Mod-Runtime.cmd`.
+4. The installer detects the parent Scavland folder automatically. If it does
+   not, enter the path containing `Scavland.exe`.
 5. Start Scavland normally through Steam.
 
 The installer installs the official runtime first, then applies the Scavland
-compatibility layer. It does not install user MODs. Install BepInEx MODs into
-`Scavland/BepInEx/plugins/` and compatible MelonLoader MODs into
-`Scavland/Mods/` after the runtime installation.
+compatibility layer. Install BepInEx MODs into
+`Scavland/BepInEx/plugins/`. Install MelonLoader MODs into
+`Scavland/Mods/`.
 
 ## Console logs
 

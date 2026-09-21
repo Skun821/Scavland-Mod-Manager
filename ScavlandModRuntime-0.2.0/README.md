@@ -6,9 +6,9 @@ Tested with Scavland Steam build `25339586` (2026-09-16).
 
 ## Install
 
-1. Extract this ZIP anywhere.
-2. Run `Install-Scavland-Mod-Runtime.cmd`.
-3. Enter the Scavland game folder — the folder containing `Scavland.exe`.
+1. Open the Scavland game folder, the folder containing `Scavland.exe`.
+2. Extract this ZIP inside the game folder.
+3. Open the extracted package folder and run `Install-Scavland-Mod-Runtime.cmd`.
 4. Start Scavland normally from Steam.
 
 The installer backs up an existing `BepInEx\core` folder before it installs its official BepInEx core. It retains your BepInEx plugins, BepInEx configuration, and save data. It never modifies `Scavland_Data` or the game's managed DLLs.
@@ -24,12 +24,16 @@ The installer backs up an existing `BepInEx\core` folder before it installs its 
 
 The official MelonLoader managed runtime is installed first. The package then replaces only `MelonLoader\net472\MelonLoader.dll` with the Scavland compatibility build and installs `ScavlandMelonHost.dll` under BepInEx. The native MelonLoader bootstrap (`version.dll` / `dobby.dll`) is deliberately not installed because BepInEx owns the Unity bootstrap for the combined setup.
 
+## Console logs
+
+The package enables the BepInEx console window. Runtime logs are also written to `Scavland\BepInEx\LogOutput.log`.
+
 ## Compatibility notes
 
 - Windows x64 Unity Mono only.
 - The installer downloads BepInEx 6.0.0-be.788+5b766a3 from the official BepInEx build service and verifies its SHA-256.
 - The installer downloads MelonLoader 0.7.3 from the official LavaGang release and verifies its SHA-256.
-- The older `Scavland Mod Runtime 0.1.1` is a Legacy package for prior Scavland builds. Do not mix its custom BepInEx DLL with this package.
+- The older `Scavland Mod Runtime 0.1.1` is a legacy package for prior Scavland builds. Do not mix its custom BepInEx DLL with this package.
 - The installer deliberately does not bundle any game files, game DLL replacements, or third-party game mods.
 
 ## Licenses and source
