@@ -1,13 +1,13 @@
 # Scavland BepInEx + MelonLoader Bridge
 
-This repository publishes the `ScavlandModRuntime-0.2.1` installer for the
+This repository publishes the `ScavlandModRuntime-0.2.2` installer for the
 Windows x64 Steam edition of Scavland.
 
-**Current release:** `0.2.1` - 2026-09-24
+**Current release:** `0.2.2` - 2026-09-26
 
-Download the complete package from the [Scavland Mod Manager v0.2.1
-Release](https://github.com/Skun821/Scavland-Mod-Manager/releases/tag/v0.2.1):
-[`ScavlandModRuntime-0.2.1.zip`](https://github.com/Skun821/Scavland-Mod-Manager/releases/download/v0.2.1/ScavlandModRuntime-0.2.1.zip)
+Download the complete package from the [Scavland Mod Manager v0.2.2
+Release](https://github.com/Skun821/Scavland-Mod-Manager/releases/tag/v0.2.2):
+[`ScavlandModRuntime-0.2.2.zip`](https://github.com/Skun821/Scavland-Mod-Manager/releases/download/v0.2.2/ScavlandModRuntime-0.2.2.zip)
 
 **Display name:** Scavland BepInEx + MelonLoader Bridge
 
@@ -20,7 +20,7 @@ Scavland compatibility bridge required for that setup.
 ## Installation
 
 1. Open the Scavland game folder, the folder containing `Scavland.exe`.
-2. Extract the `ScavlandModRuntime-0.2.1` package inside the game folder.
+2. Extract the `ScavlandModRuntime-0.2.2` package inside the game folder.
 3. Open the extracted package folder and run
    `Install-Scavland-Mod-Runtime.cmd`.
 4. The installer detects the parent Scavland folder automatically. If it does
@@ -52,7 +52,7 @@ Scavland/BepInEx/LogOutput.log
 
 ## Package contents
 
-The complete installer is in [`ScavlandModRuntime-0.2.1/`](ScavlandModRuntime-0.2.1/).
+The complete installer is in [`ScavlandModRuntime-0.2.2/`](ScavlandModRuntime-0.2.2/).
 
 - `Install-Scavland-Mod-Runtime.cmd`: user-facing installer
 - `Install-Scavland-Mod-Runtime.ps1`: download, verification, and installation logic
